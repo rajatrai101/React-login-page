@@ -23,59 +23,44 @@ body {
 }
 
 .app {
-  // max-width: 60rem;
   width: 100%;
-  background: black;
+  background: white;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  min-height: 100%;
-  min-height: 100vh;
   margin: 0 auto;
-  >header,
-  >main,
-  >footer {
+
+ 
+
+  .welcome-screen,
+  .login-form {
     width: 100%;
-    padding: 1rem;
-    text-align: center;
-    transition: 200ms;
-
-    &:hover {
-      box-shadow: 0 0 2rem gray;
-    }
-  }
-
-  >header {
-    display: block;
-    color: white;
-    background: gray;
-    text-transform: uppercase;
-  }
-
-  >main {
-    h2 {
-      color: black;
-    }
-    flex: 1 1 auto;
-    color: white;
-    background: whitesmoke;
-  }
-
-  >footer {
-    background: white;
-  }
-
-  .welcome-screen,login-form
-  {
-    width: 100%;
-    background: url('./../../images/landing-page.jpg') no-repeat center center fixed; 
+    min-height: 100vh;
+    background: url('./../../images/landing-page.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    >footer {
+      width: 100%;
+      padding: 1rem;
+      text-align: left;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.54);
+      box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  
+      .text {
+        border-bottom: solid 1px whitesmoke;
+        display: inline;
+        padding-bottom: 3px;
+      }
+    }
   }
 
   a {

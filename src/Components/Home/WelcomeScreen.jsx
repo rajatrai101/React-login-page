@@ -3,27 +3,25 @@ import {
     Hero, Heading, CallToAction, Subhead, Flex, ScrollDownIndicator
 } from 'react-landing-page'
 import Header from '../App/Header';
+import Footer from '../Footer/Footer';
 
 const WelcomeScreen = () => (
-    <div className="app">
+    <div className="welcome-screen">
         <Header />
-        <div className="welcome-screen">
-            <h1>Welcome to the Tornadoes Website!</h1><Hero
-                color='white'
-                // backgroundImage={require('./../../images/landing-page.jpg')}
-                bg='black'
-                bgOpacity={0.5}
-            >
-                <Heading>Hero with a background image</Heading>
-                <Subhead fontSize={[2, 3]}>background image & secondary action</Subhead>
-                <Flex mt={3}>
-                    <CallToAction bg='grey' mr={3}>Secondary Action</CallToAction>
-                    <CallToAction>Primary Action</CallToAction>
-                </Flex>
-                <ScrollDownIndicator />
-            </Hero>
-
-        </div>
+        <Hero
+            color='white'
+            bg='black'
+            bgOpacity={0.5}
+        >
+            <Heading>Welcome to my React App!</Heading>
+            <Subhead fontSize={[2, 3]}>This is a showcase of my work</Subhead>
+            <Flex mt={3}>
+                <CallToAction bg='rgba(0, 0, 0, 0.54)' mr={3} href='/#/login'>Login</CallToAction>
+                <CallToAction bg='orange'>Register</CallToAction>
+            </Flex>
+            <ScrollDownIndicator />
+        </Hero>
+        <Footer title="Made by Rajat Rai © 2019" />
     </div>
 )
 

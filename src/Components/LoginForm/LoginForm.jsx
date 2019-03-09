@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import { Field, reduxForm } from 'redux-form'
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -17,10 +17,12 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Header from '../App/Header';
+import Footer from '../Footer/Footer';
 
 const styles = theme => ({
   main: {
     width: 'auto',
+    height:'100vh',  
     display: 'block', // Fix IE 11 issue.
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
@@ -32,13 +34,16 @@ const styles = theme => ({
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
+    marginBottom: theme.spacing.unit * 8,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    // background: 'rgba(0, 0, 0, 0.87)',
   },
   avatar: {
     margin: theme.spacing.unit,
+    //TODO apply global theme
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -81,10 +86,10 @@ class LoginForm extends React.Component {
   render() {
     const { classes } = this.props
     return (
-      <div className="app login-form">
+      <div className="login-form">
         <Header />
         <main className={classes.main}>
-          <CssBaseline />
+          {/* <CssBaseline /> */}
           <Paper className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
@@ -108,7 +113,7 @@ class LoginForm extends React.Component {
                       </IconButton>
                     </InputAdornment>
                   ),
-                }} id="filled-adornment-password" name="password" component={inputField} type="password" />
+                }} id="filled-adornment-password" name="password" component={inputField} type={this.state.showPassword ? 'text' : 'password'} />
               </FormControl>
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -126,6 +131,7 @@ class LoginForm extends React.Component {
             </form>
           </Paper>
         </main>
+      <Footer title="Made by Rajat Rai © 2019" />
       </div>
 
     );

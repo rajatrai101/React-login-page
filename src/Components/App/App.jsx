@@ -3,6 +3,7 @@ import { HashRouter as Router } from 'react-router-dom'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './app.scss'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import LoginForm from '../LoginForm/LoginForm';
 import WelcomeScreen from '../Home/WelcomeScreen';
@@ -20,17 +21,16 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )} />
 )
 
-const Footer = ({ title }) => (<footer>{title}</footer>);
-
 const App = () => (
   <div className="app">
-      <Router>
+    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+     <Router>
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/" component={WelcomeScreen} />
         </Switch>
       </Router>
-    <Footer title="Copyright [RR]" />
+      </MuiThemeProvider> 
   </div>
 )
 
